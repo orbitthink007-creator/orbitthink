@@ -1,9 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { content } from '@/app/data/content';
 
-export default function Hero() {
+export default function Hero({ content }: { content: any }) {
+    // Fallback
+    const heroContent = content || {
+        tag: "Defying The Laws of Software",
+        title: "Orbit",
+        titleAccent: "Think",
+        description: "Loading...",
+        cta: "Our Solutions",
+        ctaId: "services"
+    };
+
     return (
         <section id="home" className="hero">
             <div className="orbit-bg">
@@ -22,11 +31,11 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <span className="hero-tag">{content.hero.tag}</span>
-                <h1>{content.hero.title}<span style={{ color: 'var(--accent-cyan)' }}>{content.hero.titleAccent}</span></h1>
-                <p>{content.hero.description}</p>
+                <span className="hero-tag">{heroContent.tag}</span>
+                <h1>{heroContent.title}<span style={{ color: 'var(--accent-cyan)' }}>{heroContent.titleAccent}</span></h1>
+                <p>{heroContent.description}</p>
                 <div className="cta-group">
-                    <a href={`#${content.hero.ctaId}`} className="btn btn-primary">{content.hero.cta}</a>
+                    <a href={`#${heroContent.ctaId}`} className="btn btn-primary">{heroContent.cta}</a>
                 </div>
             </motion.div>
         </section>

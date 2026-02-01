@@ -212,6 +212,11 @@ export const content = {
                 borderColor: '#3b82f6',
                 roleColor: '#3b82f6'
             }
+        ],
+        stats: [
+            { value: "100+", label: "Models Deployed", color: "var(--accent-cyan)" },
+            { value: "99.9%", label: "Model Accuracy", color: "var(--accent-purple)" },
+            { value: "24/7", label: "Neural Uptime", color: "var(--accent-pink)" }
         ]
     },
     servicesPage: {

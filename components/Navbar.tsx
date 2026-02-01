@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { content } from '@/app/data/content';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Navbar() {
+export default function Navbar({ content }: { content: any }) {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    // Fallback protection
+    const navContent = content || { logo: { text: "Orbit", accent: "Think" }, links: [], cta: { label: "Get Started", href: "#" } };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,16 +39,16 @@ export default function Navbar() {
     };
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${scrolled ? 'py-4 bg-[#050508]/85 backdrop-blur-xl border-b border-white/10' : 'py-6 md:py-10'}`}>
+        <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${scrolled ? 'py-6 bg-[#050508] border-b border-white/10 shadow-2xl' : 'py-8 md:py-10 bg-transparent'}`}>
             <div className="container mx-auto px-6 md:px-8 flex justify-between items-center">
                 <Link href="/" className="font-[family-name:var(--font-heading)] text-xl md:text-2xl font-bold text-white flex items-center gap-2 z-[1001]">
-                    {content.navbar.logo.text}<span className="text-[var(--accent-cyan)]">{content.navbar.logo.accent}</span>
+                    {navContent.logo.text}<span className="text-[var(--accent-cyan)]">{navContent.logo.accent}</span>
                 </Link>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:block">
                     <ul className="flex gap-8 lg:gap-12">
-                        {content.navbar.links.map((link, index) => (
+                        {navContent.links && navContent.links.map((link: any, index: number) => (
                             <li key={index}>
                                 {link.href.startsWith('/#') ? (
                                     <a href={link.href} onClick={(e) => handleScrollTo(e, link.href)} className="text-sm uppercase tracking-widest text-[var(--text-secondary)] hover:text-[var(--accent-cyan)] transition-colors relative group">
@@ -65,8 +67,8 @@ export default function Navbar() {
                 </nav>
 
                 <div className="hidden md:block">
-                    <Link href={content.navbar.cta.href} className="btn btn-primary text-xs px-6 py-3">
-                        {content.navbar.cta.label}
+                    <Link href={navContent.cta.href} className="btn btn-primary text-xs px-6 py-3">
+                        {navContent.cta.label}
                     </Link>
                 </div>
 
@@ -96,7 +98,7 @@ export default function Navbar() {
                         >
                             <nav>
                                 <ul className="flex flex-col items-center gap-8">
-                                    {content.navbar.links.map((link, index) => (
+                                    {navContent.links && navContent.links.map((link: any, index: number) => (
                                         <li key={index}>
                                             {link.href.startsWith('/#') ? (
                                                 <a href={link.href} onClick={(e) => handleScrollTo(e, link.href)} className="text-xl uppercase tracking-widest text-white hover:text-[var(--accent-cyan)]">
@@ -111,8 +113,8 @@ export default function Navbar() {
                                     ))}
                                 </ul>
                             </nav>
-                            <Link href={content.navbar.cta.href} onClick={() => setMobileMenuOpen(false)} className="btn btn-primary text-sm px-8 py-3">
-                                {content.navbar.cta.label}
+                            <Link href={navContent.cta.href} onClick={() => setMobileMenuOpen(false)} className="btn btn-primary text-sm px-8 py-3">
+                                {navContent.cta.label}
                             </Link>
                         </motion.div>
                     )}
