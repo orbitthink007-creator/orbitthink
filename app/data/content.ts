@@ -212,6 +212,11 @@ export const content = {
                 borderColor: '#3b82f6',
                 roleColor: '#3b82f6'
             }
+        ],
+        stats: [
+            { value: "100+", label: "Models Deployed", color: "var(--accent-cyan)" },
+            { value: "99.9%", label: "Model Accuracy", color: "var(--accent-purple)" },
+            { value: "24/7", label: "Neural Uptime", color: "var(--accent-pink)" }
         ]
     },
     servicesPage: {
@@ -271,6 +276,32 @@ export const content = {
             }
         ]
     },
+    process: {
+        title: "Mission Trajectory",
+        steps: [
+            {
+                number: "01",
+                title: "Ignition",
+                description: "We analyze your data landscape and identify high-impact AI opportunities.",
+                color: "var(--accent-cyan)",
+                shadow: "rgba(0, 243, 255, 0.3)"
+            },
+            {
+                number: "02",
+                title: "Orbit",
+                description: "Our engineers build and train custom models tailored to your specific parameters.",
+                color: "var(--accent-purple)",
+                shadow: "rgba(188, 19, 254, 0.3)"
+            },
+            {
+                number: "03",
+                title: "Velocity",
+                description: "Deploy, monitor, and scale. We ensure your AI solution reaches escape velocity.",
+                color: "var(--accent-pink)",
+                shadow: "rgba(255, 0, 85, 0.3)"
+            }
+        ]
+    },
     contactPage: {
         tag: "Get In Touch",
         title: "Start Your",
@@ -291,3 +322,5 @@ export const content = {
         contactEmail: "contact@orbitthink.com"
     }
 };
+
+export const initialContent = content;
