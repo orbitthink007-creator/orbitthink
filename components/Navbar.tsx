@@ -67,7 +67,7 @@ export default function Navbar({ content }: { content: any }) {
                 </nav>
 
                 <div className="hidden md:block">
-                    <Link href={navContent.cta.href} className="btn btn-primary text-xs px-6 py-3">
+                    <Link href={navContent.cta.href} className="btn btn-primary text-xs px-6 py-3" style={{ marginTop: '1rem' }}>
                         {navContent.cta.label}
                     </Link>
                 </div>
@@ -113,7 +113,7 @@ export default function Navbar({ content }: { content: any }) {
                                     ))}
                                 </ul>
                             </nav>
-                            <Link href={navContent.cta.href} onClick={() => setMobileMenuOpen(false)} className="btn btn-primary text-sm px-8 py-3">
+                            <Link href={navContent.cta.href} onClick={() => setMobileMenuOpen(false)} className="btn btn-primary text-sm px-8 py-3" style={{ marginTop: '1rem', paddingTop: '1rem' }}>
                                 {navContent.cta.label}
                             </Link>
                         </motion.div>

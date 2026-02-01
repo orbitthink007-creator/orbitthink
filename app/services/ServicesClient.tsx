@@ -42,6 +42,7 @@ export default function ServicesClient({ content }: { content: any }) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.1 }}
+                            style={{ marginBottom: '1rem' }}
                         >
                             <div className={`order-2 ${index % 2 === 1 ? 'md:order-1' : ''}`} style={{ height: '300px', background: `${section.accentColor}0d`, borderRadius: '20px', border: `1px solid ${section.accentColor}33`, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <div style={{ fontSize: '3rem', color: section.accentColor }}>{section.icon}</div>

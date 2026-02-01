@@ -13,7 +13,7 @@ export default async function Home() {
     <>
       <Hero content={content.hero} />
       <Services content={content.services} />
-      <Process />
+      <Process content={content.process} />
       <Portfolio content={content.portfolio} />
       {/* Assuming AboutSection can take props, but I haven't refactored it yet. I will pass it anyway and refactor AboutSection next. */}
       <AboutSection content={content.about} />
