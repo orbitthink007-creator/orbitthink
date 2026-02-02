@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { getDynamicContent } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "OrbitThink | Future-Ready Software Solutions",
@@ -11,17 +12,20 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
+// Layouts can be async in Next.js 14
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const content = await getDynamicContent();
+
   return (
     <html lang="en">
       <body>
-        <Navbar />
+        <Navbar content={content.navbar} />
         <main>{children}</main>
-        <Footer />
+        <Footer content={content.footer} />
       </body>
     </html>
   );

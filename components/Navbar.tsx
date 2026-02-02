@@ -9,14 +9,16 @@ export default function Navbar({ content }: { content: any }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     // Fallback protection
-    const navContent = content || { logo: { text: "Orbit", accent: "Think" }, links: [
+    const navContent = content || {
+        logo: { text: "Orbit", accent: "Think" }, links: [
             { label: "Home", href: "/" },
             { label: "Services", href: "/services" },
             { label: "Process", href: "/#process" }, // Keeping anchor for homepage scroll
             { label: "Portfolio", href: "/portfolio" },
             { label: "About", href: "/about" },
             { label: "Contact", href: "/contact" }
-        ], cta: { label: "Get Started", href: "#" } };
+        ], cta: { label: "Get Started", href: "#" }
+    };
 
     useEffect(() => {
         const handleScroll = () => {
