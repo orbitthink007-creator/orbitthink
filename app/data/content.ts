@@ -21,9 +21,11 @@ export const content = {
         tag: "Defying The Laws of Software",
         title: "Orbit",
         titleAccent: "Think",
-        description: "A Collective Force of Immersive Gaming, Mobile Innovation, Scalable Web Systems, and Enterprise AI. We build the impossible.",
-        cta: "Our Solutions",
-        ctaId: "services"
+        // description: "A Collective Force of Immersive Gaming, Mobile Innovation, Scalable Web Systems, and Enterprise AI. We build the impossible.",
+        description: "We help startups turn ideas into scalable web & mobile products — fast.",
+        cta: "Book Free Strategy Call",
+        ctaId: "services",
+        number:"+923394054520"
     },
     services: {
         tag: "Intelligent Solutions",

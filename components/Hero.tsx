@@ -26,7 +26,7 @@ export default function Hero() {
                 <h1>{content.hero.title}<span style={{ color: 'var(--accent-cyan)' }}>{content.hero.titleAccent}</span></h1>
                 <p>{content.hero.description}</p>
                 <div className="cta-group">
-                    <a href={`#${content.hero.ctaId}`} className="btn btn-primary">{content.hero.cta}</a>
+                    <a href={`https://wa.me/${content.hero.number}`} className="btn btn-primary">{content.hero.cta}</a>
                 </div>
             </motion.div>
         </section>
