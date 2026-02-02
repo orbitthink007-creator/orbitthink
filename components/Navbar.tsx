@@ -50,7 +50,7 @@ export default function Navbar({ content }: { content: any }) {
     return (
         <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${scrolled ? 'py-6 bg-[#050508] border-b border-white/10 shadow-2xl' : 'py-8 md:py-10 bg-transparent'}`}>
             <div className="container mx-auto px-6 md:px-8 flex justify-between items-center">
-                <Link href="/" className="font-[family-name:var(--font-heading)] text-xl md:text-2xl font-bold text-white flex items-center gap-2 z-[1001]">
+                <Link href="/" className="font-[family-name:var(--font-heading)] text-xl md:text-2xl font-bold text-white flex items-center z-[1001]">
                     {navContent.logo.text}<span className="text-[var(--accent-cyan)]">{navContent.logo.accent}</span>
                 </Link>
 

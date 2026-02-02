@@ -14,7 +14,8 @@ export const content = {
         ],
         cta: {
             label: "Get Started",
-            href: "/contact"
+            href: "/contact",
+            number: "+923394054520"
         }
     },
     hero: {
@@ -25,7 +26,7 @@ export const content = {
         description: "We help startups turn ideas into scalable web & mobile products — fast.",
         cta: "Book Free Strategy Call",
         ctaId: "services",
-        number:"+923394054520"
+        number: "+923394054520"
     },
     services: {
         tag: "Intelligent Solutions",

@@ -10,7 +10,7 @@ export async function getDynamicContent() {
     try {
         await dbConnect();
         const data = await Content.findOne({}).lean();
-
+        console.log('data', data);
         if (!data) {
             console.log("Fetched content from local:");
             // If strictly no data, return initial (and maybe seed?)

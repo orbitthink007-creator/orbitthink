@@ -18,12 +18,12 @@ export default function Portfolio({ content }: { content: any }) {
                     >
                         {portfolioContent.title}
                     </motion.h2>
-                    <p className="max-w-2xl mx-auto text-[var(--text-secondary)]">
+                    <p className=" mx-auto text-[var(--text-secondary)]" style={{ marginBottom: '2rem' }}>
                         {portfolioContent.subtitle}
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style={{ marginBottom: '2rem' }}>
                     {portfolioContent.projects && portfolioContent.projects.map((project: any, index: number) => (
                         <motion.div
                             key={index}

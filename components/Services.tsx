@@ -27,12 +27,12 @@ export default function Services({ content }: { content: any }) {
                     >
                         Engineering The <span className="text-[var(--accent-cyan)]">Future</span>
                     </motion.h2>
-                    <p className="max-w-2xl mx-auto mt-6 text-[var(--text-secondary)]">
+                    <p className=" mx-auto mt-6 text-[var(--text-secondary)]" style={{ marginBottom: '2rem' }}>
                         {servicesContent.description}
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style={{ marginBottom: '2rem' }}>
                     {servicesContent.list && servicesContent.list.map((service: any, index: number) => {
                         // Determine Icon. In content.ts we have iconName.
                         // For now using the index or simple mapping if we want to restore Lucide icons dynamically.

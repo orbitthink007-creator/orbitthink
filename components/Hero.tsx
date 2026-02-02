@@ -8,11 +8,11 @@ export default function Hero({ content }: { content: any }) {
         tag: "Defying The Laws of Software",
         title: "Orbit",
         titleAccent: "Think",
-        description: "Loading...",
-        cta: "Our Solutions",
-        ctaId: "services"
+        description: "We help startups turn ideas into scalable web & mobile products — fast.",
+        cta: "Book Free Strategy Call",
+        ctaId: "services",
+        number: "+923394054520"
     };
-
     return (
         <section id="home" className="hero">
             <div className="orbit-bg">
@@ -35,7 +35,7 @@ export default function Hero({ content }: { content: any }) {
                 <h1>{heroContent.title}<span style={{ color: 'var(--accent-cyan)' }}>{heroContent.titleAccent}</span></h1>
                 <p>{heroContent.description}</p>
                 <div className="cta-group">
-                    <a href={`https://wa.me/${content.hero.number}`} className="btn btn-primary">{content.hero.cta}</a>
+                    <a href={`https://wa.me/${heroContent.number ? heroContent.number : "+923394054520"}`} className="btn btn-primary">{heroContent.cta}</a>
                 </div>
             </motion.div>
         </section>
