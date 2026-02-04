@@ -181,45 +181,47 @@ export const content = {
     },
     about: {
         tag: "Who We Are",
-        title: "The Minds Behind",
-        titleAccent: "The Machine",
+        title: "Innovative Solutions",
+        titleAccent: "For Your Business",
         missionTitle: "Our Mission",
-        missionText: "OrbitThink was founded on the principle that Artificial Intelligence should amplify human potential, not replace it. We bridge the gap between theoretical research and practical, high-impact business applications. Our team operates at the bleeding edge of technology to deliver solutions that are not just effective, but revolutionary.",
-        teamTitle: "Leadership Team",
+        missionText: "We deliver cutting-edge technology solutions that empower businesses to scale, innovate, and compete in the digital era. Our commitment is to transform your vision into reality through expert development, strategic planning, and continuous support.",
+        teamTitle: "Our Capabilities",
         team: [
             {
-                name: 'M Ghulam Murtaza',
-                role: 'Head of Immersive Tech',
-                desc: 'Game Developer specialist creating seamless multiplayer systems and VR experiences using Unity & Nakama.',
+                icon: '🎮',
+                role: 'Immersive & Gaming',
+                desc: 'Expert in crafting engaging 2D/3D games and VR experiences using Unity and real-time multiplayer systems.',
                 borderColor: 'var(--accent-cyan)',
                 roleColor: 'var(--accent-cyan)'
             },
             {
-                name: 'Owais Uddin Ahmed',
-                role: 'Lead Mobile Engineer',
-                desc: 'Flutter expert delivering high-performance cross-platform apps with complex native integrations.',
+                icon: '📱',
+                role: 'Mobile Innovation',
+                desc: 'Specialized in high-performance cross-platform applications with seamless native integrations.',
                 borderColor: 'var(--accent-purple)',
                 roleColor: 'var(--accent-purple)'
             },
             {
-                name: 'Tulaib Ahmed Siddiqui',
-                role: 'Lead Web Architect',
-                desc: 'Frontend authority building scalable Next.js platforms and HIPAA-compliant healthcare systems.',
+                icon: '💻',
+                role: 'Web & Enterprise',
+                desc: 'Building scalable, secure platforms for healthcare, e-commerce, and enterprise-grade systems.',
                 borderColor: 'var(--accent-pink)',
                 roleColor: 'var(--accent-pink)'
             },
             {
-                name: 'Syed M. Mehmam',
-                role: 'Lead AI Engineer',
-                desc: 'AI specialist designing cloud-native ML pipelines, computer vision systems, and LLM solutions.',
+                icon: '🤖',
+                role: 'AI & Machine Learning',
+                desc: 'Designing cloud-native AI pipelines, computer vision systems, and intelligent automation solutions.',
                 borderColor: '#3b82f6',
                 roleColor: '#3b82f6'
             }
         ],
+        cta: "Ready to Transform Your Ideas?",
+        ctaText: "Let's discuss how we can help your business grow with innovative technology solutions.",
         stats: [
-            { value: "100+", label: "Models Deployed", color: "var(--accent-cyan)" },
-            { value: "99.9%", label: "Model Accuracy", color: "var(--accent-purple)" },
-            { value: "24/7", label: "Neural Uptime", color: "var(--accent-pink)" }
+            { value: "100+", label: "Projects Delivered", color: "var(--accent-cyan)" },
+            { value: "50+", label: "Happy Clients", color: "var(--accent-purple)" },
+            { value: "24/7", label: "Support Available", color: "var(--accent-pink)" }
         ]
     },
     servicesPage: {

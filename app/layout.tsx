@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   }
 };
 
+import { Providers } from "./providers";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+
 // Layouts can be async in Next.js 14
 export default async function RootLayout({
   children,
@@ -21,11 +25,15 @@ export default async function RootLayout({
   const content = await getDynamicContent();
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <Navbar content={content.navbar} />
-        <main>{children}</main>
-        <Footer content={content.footer} />
+        <Providers>
+          <ThemeToggle />
+          <WhatsAppButton heroContent={content.hero} />
+          <Navbar content={content.navbar} />
+          <main>{children}</main>
+          <Footer content={content.footer} />
+        </Providers>
       </body>
     </html>
   );

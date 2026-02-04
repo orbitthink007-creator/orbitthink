@@ -48,9 +48,9 @@ export default function Navbar({ content }: { content: any }) {
     };
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${scrolled ? 'py-6 bg-[#050508] border-b border-white/10 shadow-2xl' : 'py-8 md:py-10 bg-transparent'}`}>
+        <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${scrolled ? 'py-6 bg-[var(--bg-void)] border-b border-white/10 shadow-2xl' : 'py-8 md:py-10 bg-transparent'}`}>
             <div className="container mx-auto px-6 md:px-8 flex justify-between items-center">
-                <Link href="/" className="font-[family-name:var(--font-heading)] text-xl md:text-2xl font-bold text-white flex items-center z-[1001]">
+                <Link href="/" className="font-[family-name:var(--font-heading)] text-xl md:text-2xl font-bold text-[var(--text-primary)] flex items-center z-[1001]">
                     {navContent.logo.text}<span className="text-[var(--accent-cyan)]">{navContent.logo.accent}</span>
                 </Link>
 
@@ -83,7 +83,7 @@ export default function Navbar({ content }: { content: any }) {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden z-[1001] text-white focus:outline-none"
+                    className="md:hidden z-[1001] text-[var(--text-primary)] focus:outline-none"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,18 +103,18 @@ export default function Navbar({ content }: { content: any }) {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: '100%' }}
                             transition={{ type: "tween", duration: 0.3 }}
-                            className="fixed inset-0 bg-[#050508] z-[1000] flex flex-col items-center justify-center space-y-8 md:hidden"
+                            className="fixed inset-0 bg-[var(--bg-void)] z-[1000] flex flex-col items-center justify-center space-y-8 md:hidden"
                         >
                             <nav>
                                 <ul className="flex flex-col items-center gap-8">
                                     {navContent.links && navContent.links.map((link: any, index: number) => (
                                         <li key={index}>
                                             {link.href.startsWith('/#') ? (
-                                                <a href={link.href} onClick={(e) => handleScrollTo(e, link.href)} className="text-xl uppercase tracking-widest text-white hover:text-[var(--accent-cyan)]">
+                                                <a href={link.href} onClick={(e) => handleScrollTo(e, link.href)} className="text-xl uppercase tracking-widest text-[var(--text-primary)] hover:text-[var(--accent-cyan)]">
                                                     {link.label}
                                                 </a>
                                             ) : (
-                                                <Link href={link.href} onClick={() => setMobileMenuOpen(false)} className="text-xl uppercase tracking-widest text-white hover:text-[var(--accent-cyan)]">
+                                                <Link href={link.href} onClick={() => setMobileMenuOpen(false)} className="text-xl uppercase tracking-widest text-[var(--text-primary)] hover:text-[var(--accent-cyan)]">
                                                     {link.label}
                                                 </Link>
                                             )}

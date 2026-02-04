@@ -2,34 +2,42 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { sendEmail } from '@/app/actions/sendEmail';
+// Using mailto link instead of server-side email
 
 export default function ContactForm() {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [message, setMessage] = useState('');
 
-    const onSubmit = async (e: React.FormEvent) => {
+    const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        //email to my email orbitthink007@gmail.com
-        const formData = new FormData(e.currentTarget as HTMLFormElement);
+        const form = e.currentTarget as HTMLFormElement;
+        const formData = new FormData(form);
 
-        const result = await sendEmail(formData);
+        const name = formData.get('name')?.toString() ?? '';
+        const company = formData.get('company')?.toString() ?? '';
+        const email = formData.get('email')?.toString() ?? '';
+        const details = formData.get('projectDetails')?.toString() ?? '';
 
-        if (result.success) {
+        const subject = `OrbitThink: Project Inquiry from ${name || email}`;
+        const body = `Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\nProject Details:\n${details}`;
+
+        const mailto = `mailto:orbitthink007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        try {
+            setStatus('loading');
+            // Open user's default mail client with prefilled fields
+            window.location.href = mailto;
             setStatus('success');
-            setMessage(result.message);
-            (e.target as HTMLFormElement).reset();
-        } else {
-            setStatus('error');
-            setMessage(result.message);
-        }
+            setMessage('Opened your mail client. Please review and send the email.');
+            form.reset();
 
-        // Reset status after 5 seconds if success
-        if (result.success) {
             setTimeout(() => {
                 setStatus('idle');
                 setMessage('');
             }, 5000);
+        } catch (err) {
+            setStatus('error');
+            setMessage('Unable to open mail client. Please email orbitthink007@gmail.com directly.');
         }
     };
 
